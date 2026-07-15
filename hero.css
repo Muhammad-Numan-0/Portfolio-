@@ -158,7 +158,7 @@
     object-fit: cover;
     position: relative;
     z-index: 1; 
-    transform: translateY(40px); 
+    transform: translateY(10px); 
     /* Mask stays the same; it fades smoothly to the background regardless of color */
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
