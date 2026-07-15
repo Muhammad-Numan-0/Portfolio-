@@ -1,0 +1,857 @@
+/* --- 2. NAVIGATION BAR (Light Theme) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Light background with slight transparency for a clean glass effect */
+    background-color: rgba(255, 255, 255, 0.90); 
+    backdrop-filter: blur(10px); 
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--surface-color);
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-main); /* Now automatically pulls the dark navy */
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    color: var(--text-muted); /* Soft slate grey */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color); /* Turns professional blue on hover */
+}
+
+/* Nav socials */
+.nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    border-left: 1px solid var(--surface-color);
+    padding-left: 2rem;
+}
+
+.nav-socials a {
+    margin-left: 0;
+    font-size: 1.2rem;
+    color: var(--text-muted); 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-socials a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Mobile Nav Toggle (Hamburger Menu) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-main); /* Automatically uses dark navy for visibility */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* --- 3. HERO SECTION (Light UI Theme) --- */
+#hero {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: var(--bg-color); /* Uses your pure crisp white */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+#hero .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Typography Updates */
+.hero-greeting {
+    color: var(--accent-color); /* Professional tech blue */
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+#hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    color: var(--text-main); /* Deep navy for high readability */
+    font-weight: 700;
+}
+
+#hero h1 .highlight {
+    color: var(--accent-color); 
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    max-width: 550px;
+    color: var(--text-muted); /* Medium slate grey */
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+/* Updated Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.btn-solid {
+    background-color: var(--accent-color);
+    color: #ffffff; /* Kept hardcoded white so it contrasts against the blue button */
+    border: 2px solid var(--accent-color);
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-solid:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--text-muted);
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-outline:hover {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+/* Hero Socials */
+.hero-socials p {
+    color: var(--text-main); /* Deep navy */
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.social-icons-row {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-icons-row a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons-row a:hover {
+    color: var(--accent-color); /* Turns blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Hero Photo & Glowing Circle */
+
+.hero-photo {
+    flex-shrink: 0;
+    width: 450px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.photo-circle {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    /* Updated gradient to match the new professional tech blue */
+    background: linear-gradient(135deg, #60a5fa 0%, var(--accent-color) 100%);
+    border-radius: 50%;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    position: relative;
+    z-index: 1; 
+    transform: translateY(40px); 
+    /* Mask stays the same; it fades smoothly to the background regardless of color */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    #hero .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 6rem;
+    }
+    
+    .hero-photo {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .photo-circle {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .social-icons-row {
+        justify-content: center;
+    }
+}
+
+/* --- HERO ENTRANCE ANIMATIONS --- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text .hero-greeting,
+.hero-text h1,
+.hero-text .hero-desc,
+.hero-buttons,
+.hero-socials {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-text .hero-greeting { animation-delay: 0.1s; }
+.hero-text h1 { animation-delay: 0.3s; }
+.hero-text .hero-desc { animation-delay: 0.5s; }
+.hero-buttons { animation-delay: 0.7s; }
+.hero-socials { animation-delay: 0.9s; }
+
+@keyframes fadeInPhoto {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hero-photo {
+    opacity: 0;
+    animation: fadeInPhoto 1.2s ease-out 0.6s forwards;
+}
+/* --- 5. ABOUT & EXPERIENCE SECTIONS (Dark Theme) --- */
+#about {
+    background-color: var(--surface-color);
+    border-radius: 2%; 
+}
+#about h2 {
+    display: block;
+    text-align: left;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#about p {
+    text-align: left;
+    max-width: 500px;
+    padding-left: 3%;
+}
+
+/* --- ABOUT SECTION 2-COLUMN LAYOUT --- */
+.about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* CHANGE THIS LINE: 
+       The values are: Top | Right | Bottom | Left */
+    padding: 0rem 2rem 2rem 0rem; 
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem; 
+    align-items: center;
+}
+
+.about-text h2 {
+    color: var(--text-main);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-list {
+    list-style: none;
+    padding-left: 3%;
+}
+
+.about-list li {
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- STATS CARDS (Right Side) --- */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid for the cards */
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: var(--surface-color);
+    padding: 1.8rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #6a6464;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(123, 77, 255, 0.15); /* Premium purple hover glow */
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+/* Forces the paragraph text inside stat cards to center, overriding the global left-align */
+#about .stat-card p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Mobile Responsive Adjustment */
+@media (max-width: 992px) {
+    .about-inner {
+        grid-template-columns: 1fr; /* Stacks the cards below the text on small screens */
+        gap: 3rem;
+    }
+}
+/* Timeline Layout for Experience */
+/* Timeline Layout for Experience */
+#experience {
+    background-color: transparent; /* Removes the bulky background box */
+    border-radius: 0;
+    padding-top: 4rem; /* Adds nice breathing room below the About section */
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    /* 1. Set the exact same maximum width as the About section */
+    max-width: 1200px; 
+    margin: 0 auto;    
+    
+    /* 2. Change the padding to match your About section's 3% alignment */
+    padding: 0 3%;     
+}
+
+.timeline h2 {
+    display: block;
+}
+
+.timeline-item {
+    background-color: var(--surface-color); /* Makes the individual cards pop */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #1f2335; /* Keeps the subtle dark border */
+    border-left: 7px solid var(--accent-color); /* Keeps your thick left highlight */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(123, 77, 255, 0.1); 
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.timeline-company {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.timeline-item p:not(.timeline-company) {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+/* --- 6. PROJECTS & SKILLS (Dark Theme) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    position: relative;
+    background-color: var(--surface-color); /* Uses the dark card color */
+    padding: 2rem;
+    border-radius: 12px; /* Slightly rounder for a modern UI feel */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #1f2335; /* Subtle dark border to define edges against the background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deep shadow for depth */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(123, 77, 255, 0.15); /* Premium purple glow on hover */
+}
+
+.project-card.featured {
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(123, 77, 255, 0.1); /* Permanent soft glow for featured projects */
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--text-main); /* Ensures headers are crisp white */
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.card-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--text-main); /* Changes from purple to white on hover */
+}
+
+/* --- 4. SCROLLING MARQUEE --- */
+.marquee-wrapper {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: var(--accent-color); 
+    /* Changed padding from 1.5rem to 0.7rem for a slimmer, sleeker bar */
+    padding: 0.7rem 0; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.15);
+    z-index: 10;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-marquee 20s linear infinite; 
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    color: #ffffff;
+    /* Reduced font size from 1.2rem to 0.95rem to fit the thinner bar */
+    font-size: 0.95rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Slightly increased margin from 2rem to 2.5rem for better breathing room */
+    margin: 0 2.5rem; 
+    display: flex;
+    align-items: center;
+}
+
+.marquee-item i {
+    font-size: 0.4rem;
+    opacity: 0.7;
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+/* Skills Layout */
+/* --- 7. EXPERTISE / SKILLS SECTION (Light Theme) --- */
+.expertise-section {
+    background-color: var(--bg-color); /* Uses your pure white background */
+    padding: 6rem 0;
+}
+
+/* The Main Box Container */
+.expertise-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem; /* Adds rich breathing room inside the box */
+    background-color: var(--surface-color); /* Light grey-blue background for the box */
+    border-radius: 20px; /* Smooth, modern rounded corners */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 4rem;
+    align-items: center;
+    border: 1px solid rgba(37, 99, 235, 0.05); /* Very faint border to define edges */
+}
+
+/* Text Side Styling */
+.expertise-text .overline {
+    color: var(--text-muted); /* Slate grey */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.expertise-text h2 {
+    color: var(--text-main); /* Navy */
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.expertise-text h2 .highlight {
+    color: var(--accent-color); /* Professional Blue */
+}
+
+.expertise-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ... keep your existing .expertise-text rules exactly as they are ... */
+
+/* Grid Side Styling */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.2rem;
+}
+
+/* Individual Skill Cards */
+.expertise-card {
+    background-color: var(--bg-color); /* Pure white cards to stand out against the grey box */
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+ /* The Hover Glow Effect */
+.expertise-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12); /* Soft blue shadow */
+}
+.expertise-card i {
+    font-size: 2rem;
+    color: var(--accent-color); /* All icons use the tech blue */
+    margin-bottom: 1rem;
+}
+
+.expertise-card span {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .expertise-inner {
+        grid-template-columns: 1fr; /* Stacks the grid below the text on smaller screens */
+        text-align: center;
+    }
+    
+    .expertise-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(3, 1fr); /* Changes to 3 columns on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns on phones */
+    }
+}
+
+/* --- 8. TOOLS & TECHNOLOGIES SECTION (Light Theme) --- */
+.tools-section {
+    background-color: var(--bg-color); 
+    padding: 3rem 0 6rem 0; 
+}
+
+.tools-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Perfect Flex Layout for Icon and Text */
+.tools-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* The Icon */
+.tools-title-wrapper i {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* The Text (Styled to look like a heading, immune to global CSS) */
+.tools-title-text {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* The short blue line under the title */
+.tools-inner .header-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    margin-top: 0;
+    margin-bottom: 3rem; 
+    margin-left: 3.2rem; /* Aligns perfectly under the text */
+}
+
+/* Grid Layout */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem;
+}
+
+/* Floating White Cards */
+.tool-card {
+    background-color: var(--bg-color);
+    border: 1px solid rgba(37, 99, 235, 0.08); 
+    border-radius: 16px; 
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12); /* Blue hover glow */
+}
+
+.tool-card i {
+    font-size: 3rem; 
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+}
+
+.tool-card span {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .tools-title-wrapper {
+        justify-content: center;
+    }
+    
+    .tools-inner .header-line {
+        margin: 0.8rem auto 3rem auto; 
+    }
+}

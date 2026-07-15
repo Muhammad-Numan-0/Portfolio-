@@ -1,0 +1,93 @@
+/* --- 2. NAVIGATION BAR (Solid Blue Theme) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--accent-color); /* Professional tech blue */
+    padding: 2rem 0;
+    border-bottom: none; /* Removed the line since the color creates enough contrast */
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2); /* Soft shadow to float over the hero section */
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff; /* Changed to pure white to read against the blue */
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    color: rgba(255, 255, 255, 0.75); /* Soft, slightly faded white */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff; /* Pops to bright, pure white on hover */
+}
+
+/* Nav socials */
+.nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2); /* Faded white divider line */
+    padding-left: 2rem;
+}
+
+.nav-socials a {
+    margin-left: 0;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.75); 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-socials a:hover {
+    color: #ffffff; /* Pops to pure white on hover */
+    transform: translateY(-2px);
+}
+
+/* Mobile Nav Toggle (Hamburger Menu) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff; /* White hamburger lines for visibility */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }

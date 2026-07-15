@@ -1,0 +1,77 @@
+/* --- 6. PROJECTS & SKILLS (Dark Theme) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    position: relative;
+    background-color: var(--surface-color); /* Uses the dark card color */
+    padding: 2rem;
+    border-radius: 12px; /* Slightly rounder for a modern UI feel */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #1f2335; /* Subtle dark border to define edges against the background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deep shadow for depth */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(123, 77, 255, 0.15); /* Premium purple glow on hover */
+}
+
+.project-card.featured {
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(123, 77, 255, 0.1); /* Permanent soft glow for featured projects */
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--text-main); /* Ensures headers are crisp white */
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.card-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--text-main); /* Changes from purple to white on hover */
+}
+

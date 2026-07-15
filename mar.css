@@ -1,0 +1,48 @@
+/* --- 4. SCROLLING MARQUEE --- */
+.marquee-wrapper {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: var(--accent-color); 
+    /* Changed padding from 1.5rem to 0.7rem for a slimmer, sleeker bar */
+    padding: 0.7rem 0; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.15);
+    z-index: 10;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-marquee 20s linear infinite; 
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    color: #ffffff;
+    /* Reduced font size from 1.2rem to 0.95rem to fit the thinner bar */
+    font-size: 0.95rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Slightly increased margin from 2rem to 2.5rem for better breathing room */
+    margin: 0 2.5rem; 
+    display: flex;
+    align-items: center;
+}
+
+.marquee-item i {
+    font-size: 0.4rem;
+    opacity: 0.7;
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

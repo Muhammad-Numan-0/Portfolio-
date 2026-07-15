@@ -1,0 +1,181 @@
+/* --- 5. ABOUT & EXPERIENCE SECTIONS (Dark Theme) --- */
+#about {
+    background-color: var(--surface-color);
+    border-radius: 2%; 
+}
+#about h2 {
+    display: block;
+    text-align: left;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#about p {
+    text-align: left;
+    max-width: 500px;
+    padding-left: 3%;
+}
+
+/* --- ABOUT SECTION 2-COLUMN LAYOUT --- */
+.about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* CHANGE THIS LINE: 
+       The values are: Top | Right | Bottom | Left */
+    padding: 0rem 2rem 2rem 0rem; 
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem; 
+    align-items: center;
+}
+
+.about-text h2 {
+    color: var(--text-main);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-list {
+    list-style: none;
+    padding-left: 3%;
+}
+
+.about-list li {
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- STATS CARDS (Right Side) --- */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid for the cards */
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: var(--surface-color);
+    padding: 1.8rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #6a6464;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(123, 77, 255, 0.15); /* Premium purple hover glow */
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+/* Forces the paragraph text inside stat cards to center, overriding the global left-align */
+#about .stat-card p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Mobile Responsive Adjustment */
+@media (max-width: 992px) {
+    .about-inner {
+        grid-template-columns: 1fr; /* Stacks the cards below the text on small screens */
+        gap: 3rem;
+    }
+}
+/* Timeline Layout for Experience */
+/* Timeline Layout for Experience */
+#experience {
+    background-color: transparent; /* Removes the bulky background box */
+    border-radius: 0;
+    padding-top: 4rem; /* Adds nice breathing room below the About section */
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    /* 1. Set the exact same maximum width as the About section */
+    max-width: 1200px; 
+        
+}
+
+.timeline h2 {
+    display: block;
+}
+
+.timeline-item {
+    background-color: var(--surface-color); /* Makes the individual cards pop */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #1f2335; /* Keeps the subtle dark border */
+    border-left: 7px solid var(--accent-color); /* Keeps your thick left highlight */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(123, 77, 255, 0.1); 
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.timeline-company {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.timeline-item p:not(.timeline-company) {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,225 @@
+/* --- 11. CONTACT SECTION (Light Theme - Compact Version) --- */
+.contact-section {
+    background-color: var(--surface-color); 
+    padding: 3.5rem 0; /* Reduced from 6rem to cut top/bottom empty space */
+    border-radius: 3%;
+}
+
+.contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 3rem; /* Reduced from 5rem to pull columns closer */
+    align-items: center;
+}
+
+/* --- Left Side: Contact Info --- */
+.contact-info .overline {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.contact-title {
+    font-size: 2.8rem !important; /* Reduced from 3.5rem */
+    line-height: 1.1 !important;
+    color: var(--text-main) !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important; /* Tighter margin */
+    border: none !important;
+}
+
+.contact-title .highlight {
+    color: var(--accent-color);
+}
+
+.contact-line {
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+.contact-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem; /* Slightly smaller text */
+    line-height: 1.5;
+    margin-bottom: 1.5rem; /* Reduced from 2.5rem */
+    max-width: 90%;
+}
+
+/* Contact List */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0; /* Reduced from 1.5rem */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+}
+
+.contact-item.no-border {
+    border-bottom: none;
+}
+
+.icon-box {
+    width: 42px; /* Shrunk from 50px */
+    height: 42px; /* Shrunk from 50px */
+    background-color: rgba(37, 99, 235, 0.1); 
+    color: var(--accent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.text-box h4 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.text-box p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- Right Side: Form Card --- */
+.contact-form-card {
+    background-color: var(--bg-color); 
+    padding: 2.5rem; /* Reduced from 3.5rem to shrink the white box */
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); 
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.form-header .dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.form-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin: 0;
+}
+
+.form-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
+}
+
+/* Form Inputs */
+.modern-form .form-group {
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.modern-form label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+}
+
+.modern-form input,
+.modern-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Thinner inputs */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fcfcfc; 
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.modern-form input:focus,
+.modern-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); 
+}
+
+.modern-form textarea {
+    resize: vertical;
+    min-height: 90px; /* Shrunk from 120px */
+}
+
+.btn-submit {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 2rem; /* Thinner button */
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8; 
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .contact-inner {
+        grid-template-columns: 1fr; 
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+    
+    .contact-line {
+        margin: 0 auto 1.5rem auto; 
+    }
+    
+    .contact-desc {
+        max-width: 100%;
+        margin: 0 auto 2.5rem auto;
+    }
+    
+    .contact-item {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-card {
+        padding: 1.5rem; 
+    }
+}

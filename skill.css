@@ -1,0 +1,113 @@
+/* Skills Layout */
+/* --- 7. EXPERTISE / SKILLS SECTION (Light Theme) --- */
+.expertise-section {
+    background-color: var(--bg-color); /* Uses your pure white background */
+    padding: 6rem 0;
+}
+
+/* The Main Box Container */
+.expertise-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;   /* ✅ match tools-inner's left/right value */
+    background-color: var(--surface-color); /* Light grey-blue background for the box */
+    border-radius: 20px; /* Smooth, modern rounded corners */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 4rem;
+    align-items: center;
+    border: 1px solid rgba(37, 99, 235, 0.05); /* Very faint border to define edges */
+}
+
+/* Text Side Styling */
+.expertise-text .overline {
+    color: var(--text-muted); /* Slate grey */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.expertise-text h2 {
+    color: var(--text-main); /* Navy */
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.expertise-text h2 .highlight {
+    color: var(--accent-color); /* Professional Blue */
+}
+
+.expertise-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ... keep your existing .expertise-text rules exactly as they are ... */
+
+/* Grid Side Styling */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.2rem;
+}
+
+/* Individual Skill Cards */
+.expertise-card {
+    background-color: var(--bg-color); /* Pure white cards to stand out against the grey box */
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+ /* The Hover Glow Effect */
+.expertise-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12); /* Soft blue shadow */
+}
+.expertise-card i {
+    font-size: 2rem;
+    color: var(--accent-color); /* All icons use the tech blue */
+    margin-bottom: 1rem;
+}
+
+.expertise-card span {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .expertise-inner {
+        grid-template-columns: 1fr; /* Stacks the grid below the text on smaller screens */
+        text-align: center;
+    }
+    
+    .expertise-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(3, 1fr); /* Changes to 3 columns on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns on phones */
+    }
+}
+

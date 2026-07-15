@@ -1,0 +1,235 @@
+/* --- 8. TOOLS & TECHNOLOGIES SECTION (Light Theme) --- */
+/* FIX 1: Adds the full-width thin line and perfect spacing */
+.tools-title-wrapper,
+.tools-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    
+    /* THE NEW FULL-WIDTH LINE */
+    border-bottom: 2px solid var(--accent-color) !important;
+    padding-bottom: 1rem !important; /* Space between the text and the line */
+    margin-bottom: 3rem !important;  /* Space between the line and the tool cards */
+}
+
+/* HIDES the old short, thick blue line */
+.tools-inner .header-line {
+    display: none !important; 
+}
+.tools-section {
+    background-color: var(--bg-color); 
+    padding: 3rem 0 6rem 0; 
+}
+
+.tools-inner {
+    max-width: 1200px;
+    
+}
+
+/* Perfect Flex Layout for Icon and Text */
+.tools-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tools-title-wrapper i {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.tools-title-text {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.tools-inner .header-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    margin-top: 0;
+    margin-bottom: 3rem; 
+    margin-left: 3.2rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background-color: var(--bg-color);
+    border: 1px solid rgba(37, 99, 235, 0.08); 
+    border-radius: 16px; 
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+}
+
+.tool-card i {
+    font-size: 3rem; 
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+}
+
+.tool-card span {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+@media (max-width: 992px) {
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .tools-title-wrapper {
+        justify-content: center;
+    }
+    
+    .tools-inner .header-line {
+        margin: 0.8rem auto 3rem auto; 
+    }
+}
+
+
+/* --- 9. PROFESSIONAL SKILLS SECTION (Light Theme) --- */
+.prof-skills-section {
+    background-color: var(--bg-color); 
+    padding: 2rem 0 6rem 0; /* Flows naturally after the Tools section */
+}
+
+/* The Grey Box Wrapper */
+.prof-skills-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem; 
+    background-color: var(--surface-color); /* Matches the grey-blue of your Expertise box */
+    border-radius: 20px; 
+    border: 1px solid rgba(37, 99, 235, 0.05); 
+}
+
+/* Left-Aligned Header with Full-Width Line */
+.prof-skills-header {
+    width: 100%;
+    border-bottom: 3px solid var(--accent-color); /* Full width thin line */
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.prof-skills-header h2 {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin: 0;
+    border: none !important; /* Prevents global CSS interference */
+}
+
+/* 4-Column Grid */
+.prof-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem;
+}
+
+/* Pure White Skill Cards */
+.prof-skill-card {
+    background-color: var(--bg-color); /* Pops as pure white against the grey box */
+    border: 1px solid rgba(37, 99, 235, 0.08); 
+    border-radius: 16px; 
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.prof-skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12); 
+}
+
+/* Circular Background Behind Icons (Matches your image) */
+.icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(37, 99, 235, 0.08); /* Very soft transparent blue circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto; /* Centers the circle and pushes text down */
+    transition: background-color 0.3s ease;
+}
+
+.prof-skill-card:hover .icon-wrapper {
+    background-color: var(--accent-color); /* Circle turns solid blue on hover */
+}
+
+.prof-skill-card:hover .icon-wrapper i {
+    color: #ffffff; /* Icon turns white on hover */
+}
+
+.icon-wrapper i {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.prof-skill-card h3 {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.prof-skill-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .prof-skills-inner {
+        padding: 3rem 2rem; /* Shrinks the box padding for smaller screens */
+    }
+    .prof-skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .prof-skills-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
+}
